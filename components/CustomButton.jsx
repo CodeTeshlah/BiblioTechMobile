@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Pressable  } from 'react-native'
 import React from 'react'
+import {LinearGradient} from 'expo-linear-gradient'
 
 
 
@@ -17,9 +18,12 @@ export const CustomButtonFilled = () => {
   return (
     <View>
       
-      <Pressable style={styles.CustomButtonFilled}>
+      <LinearGradient style={styles.CustomButtonFilled}
+       colors={['#6234EC', '#C709E480']}
+      
+      >
         <Text style={styles.ButtonTextFilled}>LOGIN</Text>
-       </Pressable>
+       </LinearGradient>
        
       
     </View>
@@ -55,6 +59,7 @@ const styles = StyleSheet.create({
         marginLeft: 30,
         backgroundColor: '#7D3EEC',
         borderColor: '#7D3EEC',
+        
       },
 
       ButtonTextFilled: {

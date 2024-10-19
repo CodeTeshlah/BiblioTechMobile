@@ -7,20 +7,13 @@ import BookComponent from './components/BookComponent'
 const App = () => {
   return (
     <View>
-      {/*<LogIn />*/}
-      {/*<SignUp/>*/}
-      <BookComponent/>
+      {/* <LogIn /> */}
+      {/* <SignUp/> */}
+      <BookComponent bookTitle={"Toni at si Matsing"}/>
+      
+      
     </View>
   )
 }
 
 export default App
-
-const styles = StyleSheet.create({
-  container: {
-    color: 'black',
-    fontSize: 24,
-    paddingTop: 172,
-    paddingLeft: 30,
-  },
-})
