@@ -9,6 +9,13 @@ export const TextBox = () => {
   )
 }
 
+export const TextboxSearch = () => {
+  return (
+    <View>
+      <TextInput></TextInput>
+    </View>
+  )
+}
 export default TextBox
 
 const styles = StyleSheet.create({
