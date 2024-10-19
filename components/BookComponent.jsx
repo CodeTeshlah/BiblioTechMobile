@@ -23,7 +23,7 @@ const bookstyles = StyleSheet.create({
         top: 40,
         backgroundColor: 'gray',
         borderRadius: 5,
-    },
+    }, 
 
     logo: {
         height: 50,
