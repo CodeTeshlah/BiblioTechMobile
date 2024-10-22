@@ -1,12 +1,14 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import SignUpStyles from '../Stylesheet/SignUpStyles'
 import  {CustomButtonFilled} from '../CustomButton'
 import TextBox from '../TextBox'
+import { useNavigation } from '@react-navigation/native'
 
 const logoIMG = require('../../assets/Bibliotech_logo.png')
 
 export const SignUp = () => {
+  const navigation = useNavigation()
   return (
     <View>
       <Image source={logoIMG} style={SignUpStyles.SignUp_logo}/>
@@ -33,7 +35,11 @@ export const SignUp = () => {
       </View>
 
         <View style={SignUpStyles.SignUp_ButtonContainer}>
+
+        <TouchableOpacity onPress={() => navigation.navigate("LogIn")}>
         <Text style={SignUpStyles.SignUp_TextLink}>Already have an account.</Text>
+        </TouchableOpacity>
+        
         <CustomButtonFilled />
         </View>
       

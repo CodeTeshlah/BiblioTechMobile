@@ -1,13 +1,16 @@
-import { StyleSheet, Text, View, Pressable  } from 'react-native'
+import { StyleSheet, Text, View, Pressable, TouchableOpacity  } from 'react-native'
 import React from 'react'
 import {LinearGradient} from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
 
 
 
 export const CustomButton = () => {
+
+  const navigation = useNavigation()
   return (
     <View>
-       <Pressable style={styles.CustomButton}>
+       <Pressable style={styles.CustomButton} onPress={() => navigation.navigate("SignUp")}>
         <Text style={styles.ButtonText}>SIGN UP</Text>
        </Pressable>
     </View>
@@ -15,17 +18,37 @@ export const CustomButton = () => {
 }
 
 export const CustomButtonFilled = () => {
+  const navigation = useNavigation()
   return (
-    <View>
+    <View >
+       <TouchableOpacity onPress={() => navigation.navigate("LogIn")} style={styles.CustomButtonFilled}>
+      {/* <LinearGradient style={styles.CustomButtonFilled} */}
+       {/* colors={['#6234EC', '#C709E480']} */}
+      {/* >  */}
       
-      <LinearGradient style={styles.CustomButtonFilled}
-       colors={['#6234EC', '#C709E480']}
-      
-      >
         <Text style={styles.ButtonTextFilled}>LOGIN</Text>
-       </LinearGradient>
-       
+        
+        {/* </LinearGradient> */}
+        </TouchableOpacity>
+        
+    </View>
+  )
+}
+
+export const CustomButtonFilled2 = () => {
+  const navigation = useNavigation()
+  return (
+    <View >
+       <TouchableOpacity onPress={() => navigation.navigate("BasicSearch")} style={styles.CustomButtonFilled}>
+      {/* <LinearGradient style={styles.CustomButtonFilled} */}
+       {/* colors={['#6234EC', '#C709E480']} */}
+      {/* >  */}
       
+        <Text style={styles.ButtonTextFilled}>LOGIN</Text>
+        
+        {/* </LinearGradient> */}
+        </TouchableOpacity>
+        
     </View>
   )
 }
@@ -67,4 +90,5 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
       },
       
+
 })

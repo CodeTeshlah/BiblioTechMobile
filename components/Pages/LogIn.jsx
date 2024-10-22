@@ -1,14 +1,20 @@
-import { Text, View, Button, Image, Checkbox } from 'react-native'
+import { Text, View, Button, Image } from 'react-native'
 import React from 'react'
 import TextBox from '../TextBox'
 import styles from '../Stylesheet/LoginStyles'
-import { CustomButton, CustomButtonFilled} from '../CustomButton'
+import { CustomButton, CustomButtonFilled2} from '../CustomButton'
+import { useNavigation } from '@react-navigation/native'
+
+
+
+
 
 
 
 const logoIMG = require('../../assets/Bibliotech_logo.png')
 
 export const LogIn = () => {
+  const navigation = useNavigation()
   return (
     <View>
       <Image source={logoIMG} style={styles.logo}/>
@@ -36,9 +42,11 @@ export const LogIn = () => {
       <View style={styles.ButtonContainer}>
 
       <CustomButton />
-      <CustomButtonFilled />
+      <CustomButtonFilled2/>
       
       </View>
+
+   
 
      
 

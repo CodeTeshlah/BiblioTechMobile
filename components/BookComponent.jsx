@@ -3,6 +3,8 @@ import React from 'react'
 
 const bookMark = require('../assets/bookmark.png')
 
+const imagePlaceholder = require('../assets/image_placeholder.png')
+
 function BookComponent({bookTitle, bookCallNum, style } ) {
   if (bookTitle == null) {
     bookTitle = "Empty Title"
@@ -13,8 +15,9 @@ function BookComponent({bookTitle, bookCallNum, style } ) {
     bookCallNum = "Empty Call Number"
   }
   return (
-    <View style={[bookstyles.Bookcontainer, style]}>
-        <View style={bookstyles.book}></View>
+    <View style={[bookstyles.Bookcontainer,style]}>
+        {/* <View style={bookstyles.book}></View> */}
+        <Image source={imagePlaceholder} style={bookstyles.book}/>
       
       <Image source={bookMark} style={bookstyles.bookmark}/>
 
@@ -40,17 +43,18 @@ const bookstyles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         borderRadius: 5,
         borderWidth: 1,
-        borderColor: 'gray',
+        borderColor: '#FFF',
         marginBottom: 15,
+        
     }, 
   
     book: {
         padding: 23,
         margin: 10,
-        backgroundColor: 'purple',
         width: 60,
         height: 60,
         borderRadius: 5,
+        resizeMode: 'contain',
     },
 
    bookTitle: {
@@ -71,7 +75,7 @@ const bookstyles = StyleSheet.create({
         fontSize: 11,
         color: '#787878',
         top: 25,
-        left: 2,
+        left: 25,
         textAlign: 'center',
     },
 
