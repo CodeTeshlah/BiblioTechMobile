@@ -4,9 +4,6 @@ import { NavigationContainer } from '@react-navigation/native'
 
 import StackNav from './components/Pages/StackNav'
 
-
-
-
  
 
 const App = () => {

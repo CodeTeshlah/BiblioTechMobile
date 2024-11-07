@@ -6,7 +6,7 @@ export default Accountstyles = StyleSheet.create({
         width: 150,
         top: 90,
         resizeMode: 'contain',
-        marginLeft: 30,
+        marginLeft: 223,
         marginTop: -65,
     },
     
@@ -15,7 +15,7 @@ export default Accountstyles = StyleSheet.create({
         width: 25,
         top: 35,
         resizeMode: 'contain',
-        marginLeft: 348,
+        marginLeft: 40,
     },
     
     grayContainer:{

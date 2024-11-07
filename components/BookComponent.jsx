@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, Image} from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable} from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 
 const bookMark = require('../assets/bookmark.png')
@@ -6,6 +7,9 @@ const bookMark = require('../assets/bookmark.png')
 const imagePlaceholder = require('../assets/image_placeholder.png')
 
 function BookComponent({bookTitle, bookCallNum, style } ) {
+
+  const navigation = useNavigation()
+
   if (bookTitle == null) {
     bookTitle = "Empty Title"
 
@@ -15,7 +19,8 @@ function BookComponent({bookTitle, bookCallNum, style } ) {
     bookCallNum = "Empty Call Number"
   }
   return (
-    <View style={[bookstyles.Bookcontainer,style]}>
+    <Pressable onPress={() => navigation.navigate("BookDetails")}>
+      <View style={[bookstyles.Bookcontainer,style]}>
         {/* <View style={bookstyles.book}></View> */}
         <Image source={imagePlaceholder} style={bookstyles.book}/>
       
@@ -26,6 +31,8 @@ function BookComponent({bookTitle, bookCallNum, style } ) {
       <Text style={bookstyles.bookCallNum}>{bookCallNum}</Text>
       </View>
     </View>
+    </Pressable>
+    
   )
 }
 
