@@ -1,31 +1,65 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, TextInput, View, Image } from 'react-native'
 import React from 'react'
+const searchicon = require('../assets/search_icon.png')
 
-export const TextBox = () => {
+export const TextBox = ({ value, setValue, placeholder }) => {
   return (
     <View>
-      <TextInput style={styles.Textbox}></TextInput>
+      <TextInput style={styles.Textbox} placeholder={placeholder} value={value} onChangeText={(value) => setValue(value)}></TextInput>
     </View>
   )
 }
 
 export const TextboxSearch = () => {
   return (
-    <View>
-      <TextInput></TextInput>
+    <View style={styles.textboxContainer}>
+      <TextInput style={styles.textboxSearchbar} placeholder='Search'></TextInput>
+      <Image source={searchicon} style={styles.searchicon} />
     </View>
   )
 }
 export default TextBox
 
 const styles = StyleSheet.create({
-    Textbox: {
+  Textbox: {
     height: 36,
-    width: 350,
+    // width: 330,
+    minWidth: "85%",
+    width: "85%",
     padding: 10,
-    marginLeft: 30,
+    alignSelf: "center",
     borderRadius: 5,
     backgroundColor: '#E9E9E9',
     color: '#7D3EEC',
-    },
+  },
+
+  //Search Bar
+
+  textboxSearchbar: {
+    height: 40,
+    width: 250,
+    padding: 10,
+    marginLeft: 25,
+    borderRadius: 35,
+    color: '#7D3EEC',
+  },
+
+  searchicon: {
+    resizeMode: 'contain',
+    height: 20,
+    alignItems: 'center',
+    marginRight: 35,
+  },
+
+  textboxContainer: {
+    backgroundColor: '#E9E9E9',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 35,
+    height: 40,
+    width: 280,
+    marginTop: 10,
+    marginLeft: 30,
+  },
 })
