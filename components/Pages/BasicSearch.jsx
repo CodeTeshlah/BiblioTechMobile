@@ -16,70 +16,66 @@ function BasicSearch() {
   const navigation = useNavigation()
   const drawer = useRef(null);
 
-
-
-
-  const navigationView = () => (
-    <View style={BasicSearchStyles.drawerContainer}>
-      <Pressable onPress={() => {
-        console.log('navigation')
-        drawer.current.closeDrawer()
-      }}>
-        <Image source={threeBar} style={BasicSearchStyles.threeBarDrawer} />
-
-      </Pressable>
-
-      <TouchableOpacity style={BasicSearchStyles.drawerButton} onPress={() => navigation.navigate("BasicSearch")}>
-        <Text style={BasicSearchStyles.drawerText}>Basic Search</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={BasicSearchStyles.drawerButton} onPress={() => navigation.navigate("Account")}>
-        <Text style={BasicSearchStyles.drawerText}>Account</Text>
-      </TouchableOpacity>
-
-    </View>
-  );
-
-
-
   return (
-    <DrawerLayoutAndroid
-      ref={drawer}
-      drawerWidth={200}
-      drawerPosition={'left'}
-      renderNavigationView={navigationView}
-    >
+    <View>
+      {/* <DrawerLayoutAndroid
+        ref={drawer}
+        drawerWidth={200}
+        drawerPosition={'left'}
+        renderNavigationView={navigationView}
+      >
+      </DrawerLayoutAndroid> */}
       <View>
-        <Image source={imageLogo} style={BasicSearchStyles.img_logo} />
-
-        <Pressable onPress={() => {
-          console.log('asdasd')
-          drawer.current.openDrawer()
-        }}>
-          <Image source={threeBar} style={BasicSearchStyles.threeBar} />
-
-        </Pressable>
-
-
-        <View style={BasicSearchStyles.search}>
-          <TextboxSearch />
-          <Image source={filter} style={BasicSearchStyles.filtericon} />
+        <View style={BasicSearchStyles.header}>
+          <Pressable onPress={() => {
+            drawer.current.openDrawer()
+          }}>
+            <Image source={threeBar} style={BasicSearchStyles.threeBar} />
+          </Pressable>
+          <Image source={imageLogo} style={BasicSearchStyles.img_logo} />
         </View>
-
-        <View >
-          <View style={BasicSearchStyles.bookContainer}>
-            <View style={BasicSearchStyles.books}>
-              <BookComponent />
-            </View>
-          </View>
-
-          <PageNav />
-
+        <View style={BasicSearchStyles.search}>
+          <TextboxSearch style={BasicSearchStyles.TextboxSearch} />
+          <Image source={filter} style={BasicSearchStyles.filtericon} />
         </View>
       </View>
 
-    </DrawerLayoutAndroid>
+      <View >
+        <View style={BasicSearchStyles.bookContainer}>
+          <View style={BasicSearchStyles.books}>
+            <BookComponent />
+          </View>
+        </View>
+
+        <PageNav />
+
+      </View>
+    </View>
+
   )
 }
+
+
+const navigationView = () => (
+  <View style={BasicSearchStyles.drawerContainer}>
+    <Pressable onPress={() => {
+      console.log('navigation')
+      drawer.current.closeDrawer()
+    }}>
+      <Image source={threeBar} style={BasicSearchStyles.threeBarDrawer} />
+
+    </Pressable>
+
+    <TouchableOpacity style={BasicSearchStyles.drawerButton} onPress={() => navigation.navigate("BasicSearch")}>
+      <Text style={BasicSearchStyles.drawerText}>Basic Search</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity style={BasicSearchStyles.drawerButton} onPress={() => navigation.navigate("Account")}>
+      <Text style={BasicSearchStyles.drawerText}>Account</Text>
+    </TouchableOpacity>
+
+  </View>
+);
+
 
 export default BasicSearch

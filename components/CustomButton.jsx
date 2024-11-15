@@ -6,7 +6,6 @@ import { useNavigation } from '@react-navigation/native'
 
 
 export const CustomButton = ({ onPress, style, customName = "Insert Name" }) => {
-
   const navigation = useNavigation()
   return (
     <View style={[]}>
@@ -22,13 +21,7 @@ export const CustomButtonFilled = ({ onPress }) => {
   return (
     <View >
       <TouchableOpacity onPress={onPress} style={styles.CustomButtonFilled}>
-        {/* <LinearGradient style={styles.CustomButtonFilled} */}
-        {/* colors={['#6234EC', '#C709E480']} */}
-        {/* >  */}
-
         <Text style={styles.ButtonTextFilled}>LOGIN</Text>
-
-        {/* </LinearGradient> */}
       </TouchableOpacity>
 
     </View>
@@ -57,14 +50,14 @@ export default CustomButton
 
 const styles = StyleSheet.create({
   CustomButton: {
+    display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 2,
-    padding: 15,
-    // width: 145,
-    minWidth: 100,
     borderRadius: 30,
-    top: 100,
-    marginLeft: 30,
+    // padding: 15,
+    // alignContent: 'center',
+    minWidth: 100,
     borderColor: '#7D3EEC',
   },
 

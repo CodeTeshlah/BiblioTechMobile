@@ -1,13 +1,48 @@
 import { StyleSheet } from 'react-native'
 
 export default styles = StyleSheet.create({
+  LoginPage: {
+    backgroundColor: 'white',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 70,
+  },
+
+
+  LoginLogoContainer: {
+    display: 'flex',
+    padding: 0,
+    flexDirection: 'column',
+    height: "fit-content",
+    alignItems: 'center',
+    width: '77%',
+  },
+
+  logo: {
+    width: '100%',
+    height: 70,
+    resizeMode: 'contain'
+  },
+
   LoginTitle: {
     color: 'black',
     fontSize: 24,
-    paddingTop: 150,
-    paddingLeft: 30,
+    justifySelf: 'center',
     fontWeight: 'bold',
+    textAlign: 'left',
+    width: '100%',
+    padding: 0,
 
+  },
+
+  LoginDesc: {
+    textAlign: 'left',
+    fontSize: 15,
+    color: '#5E5E5E',
+    width: '100%',
   },
 
   loginView: {
@@ -15,51 +50,22 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  LoginDesc: {
-    color: 'black',
-    fontSize: 15,
-    paddingLeft: 30,
-    color: '#5E5E5E',
-    top: 10,
-  },
-
-  TxtName: {
-    marginTop: 73,
-    marginLeft: 35,
-    color: '#7D3EEC',
-  },
-
   TextboxContainer: {
-    marginBottom: -15,
-    marginTop: -30,
-  },
-
-
-  logo: {
-    width: 400,
-    height: 70,
-    margin: 'auto',
-    top: 90,
-    resizeMode: 'contain'
-  },
-
-  centerPosition: {
-    display: 'flex',
-    // justifyContent: 'center',
-    // alignContent: 'center',
+    width: '77%',
+    gap: 30,
   },
 
   ButtonContainer: {
-    flexDirection: 'row',
+    display: 'flex',
     justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    marginRight: 30,
-
+    flexDirection: 'row',
+    width: '77%',
   },
 
   LoginButton: {
-    minWidth: '600px',
-    width: '600px',
+    width: '100%',
+    height: 40,
   },
+
 
 })
