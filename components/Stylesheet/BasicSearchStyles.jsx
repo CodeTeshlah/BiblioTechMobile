@@ -62,7 +62,7 @@ export default BasicSearchStyles = StyleSheet.create({
     },
 
     books: {
-        marginTop: -30,
+        top: -30,
     },
 
     threeBarDrawer: {
