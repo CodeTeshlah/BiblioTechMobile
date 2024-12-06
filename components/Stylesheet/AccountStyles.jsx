@@ -1,24 +1,34 @@
-import {StyleSheet} from 'react-native'
+import { StyleSheet } from 'react-native'
 
 export default Accountstyles = StyleSheet.create({
-    img_logo:{
+
+    header: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: '100%',
+        marginTop: 20,
+        padding: 20,
+        paddingBottom: 0,
+    },
+
+    img_logo: {
         height: 70,
         width: 150,
-        top: 90,
         resizeMode: 'contain',
-        marginLeft: 223,
-        marginTop: -65,
     },
-    
-    threeBar:{
+
+    threeBar: {
         height: 38,
         width: 25,
-        top: 35,
+        // top: 35,
         resizeMode: 'contain',
-        marginLeft: 40,
+        // left: 30,
+        padding: 10,
     },
-    
-    grayContainer:{
+
+    grayContainer: {
         width: 415,
         height: 190,
         backgroundColor: '#CACACA',
@@ -27,20 +37,20 @@ export default Accountstyles = StyleSheet.create({
     },
 
     userProfile: {
-        marginLeft: 30,
-        marginTop: -15,
+        left: 30,
+        top: -15,
         height: 150,
         width: 150,
     },
 
-    userName:{
+    userName: {
         fontSize: 18,
         fontWeight: 'bold',
     },
 
     tagName: {
-    fontSize: 12,
-    color: '#7D7D7D',
+        fontSize: 12,
+        color: '#7D7D7D',
     },
 
     userContainer: {
@@ -58,7 +68,7 @@ export default Accountstyles = StyleSheet.create({
     userFavorites: {
         color: '#7D3EEC',
         marginLeft: 31,
-        marginTop: 44,
+        top: 10,
         fontSize: 18,
     },
 

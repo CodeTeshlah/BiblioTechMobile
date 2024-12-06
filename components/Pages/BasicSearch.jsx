@@ -18,17 +18,12 @@ function BasicSearch() {
 
   return (
     <View>
-      {/* <DrawerLayoutAndroid
-        ref={drawer}
-        drawerWidth={200}
-        drawerPosition={'left'}
-        renderNavigationView={navigationView}
-      >
-      </DrawerLayoutAndroid> */}
+
+
       <View>
         <View style={BasicSearchStyles.header}>
           <Pressable onPress={() => {
-            drawer.current.openDrawer()
+            navigation.toggleDrawer()
           }}>
             <Image source={threeBar} style={BasicSearchStyles.threeBar} />
           </Pressable>
@@ -44,6 +39,7 @@ function BasicSearch() {
         <View style={BasicSearchStyles.bookContainer}>
           <View style={BasicSearchStyles.books}>
             <BookComponent />
+            <BookComponent />
           </View>
         </View>
 
@@ -56,26 +52,7 @@ function BasicSearch() {
 }
 
 
-const navigationView = () => (
-  <View style={BasicSearchStyles.drawerContainer}>
-    <Pressable onPress={() => {
-      console.log('navigation')
-      drawer.current.closeDrawer()
-    }}>
-      <Image source={threeBar} style={BasicSearchStyles.threeBarDrawer} />
 
-    </Pressable>
-
-    <TouchableOpacity style={BasicSearchStyles.drawerButton} onPress={() => navigation.navigate("BasicSearch")}>
-      <Text style={BasicSearchStyles.drawerText}>Basic Search</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity style={BasicSearchStyles.drawerButton} onPress={() => navigation.navigate("Account")}>
-      <Text style={BasicSearchStyles.drawerText}>Account</Text>
-    </TouchableOpacity>
-
-  </View>
-);
 
 
 export default BasicSearch

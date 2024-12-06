@@ -43,16 +43,15 @@ const bookstyles = StyleSheet.create({
     position: 'relative',
     display: "flex",
     flexDirection: "row",
-    height: 80,
+    height: 100,
     width: 380,
     margin: 'auto',
     top: 40,
     backgroundColor: '#FFFFFF',
-    borderRadius: 5,
+    borderRadius: 15,
     borderWidth: 1,
     borderColor: '#FFF',
     marginBottom: 15,
-
   },
 
   book: {
