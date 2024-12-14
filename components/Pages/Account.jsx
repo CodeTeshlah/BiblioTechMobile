@@ -17,6 +17,7 @@ export function Account() {
   return (
 
     <View>
+
       <View style={Accountstyles.header}>
 
         <Pressable onPress={() => navigation.toggleDrawer()}>
@@ -25,27 +26,31 @@ export function Account() {
 
         <Image source={imageLogo} style={Accountstyles.img_logo} />
       </View>
-      <View style={Accountstyles.grayContainer}>
-      </View>
 
-      <Image source={user_profile} style={Accountstyles.userProfile} />
+      <ScrollView style={{ height: '100%' }}>
+        <View style={Accountstyles.grayContainer}>
+        </View>
 
-      <View style={Accountstyles.userContainer}>
-        <Text style={Accountstyles.userName}>Userame</Text>
-        <Text style={Accountstyles.tagName}>@TagName</Text>
-      </View>
+        <Image source={user_profile} style={Accountstyles.userProfile} />
 
-      <View>
-        <Text style={Accountstyles.userBio}>Bio</Text>
-        <Text style={Accountstyles.userFavorites}>Favorites</Text>
-      </View>
+        <View style={Accountstyles.userContainer}>
+          <Text style={Accountstyles.userName}>Userame</Text>
+          <Text style={Accountstyles.tagName}>@TagName</Text>
+        </View>
 
-      <ScrollView horizontal style={Accountstyles.FavoritesContainer} showsHorizontalScrollIndicator={false}>
-        <FavoritesComponent />
-        <FavoritesComponent />
-        <FavoritesComponent />
-        <FavoritesComponent />
-        <FavoritesComponent />
+        <View>
+          <Text style={Accountstyles.userBio}>Bio</Text>
+          <Text style={Accountstyles.userFavorites}>Favorites</Text>
+        </View>
+
+        <ScrollView horizontal style={Accountstyles.FavoritesContainer} showsHorizontalScrollIndicator={false}>
+          <FavoritesComponent />
+          <FavoritesComponent />
+          <FavoritesComponent />
+          <FavoritesComponent />
+          <FavoritesComponent />
+        </ScrollView>
+
       </ScrollView>
     </View>
 

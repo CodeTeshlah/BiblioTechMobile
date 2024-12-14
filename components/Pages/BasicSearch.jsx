@@ -1,5 +1,5 @@
-import { View, Text, Image, TouchableOpacity, DrawerLayoutAndroid, Pressable } from 'react-native'
-import React, { useRef, useState } from 'react'
+import { View, Text, Image, TouchableOpacity, Pressable, ScrollView } from 'react-native'
+import React, { useState } from 'react'
 import { TextboxSearch } from '../TextBox'
 import BasicSearchStyles from '../Stylesheet/BasicSearchStyles'
 import BookComponent from '../BookComponent'
@@ -14,7 +14,8 @@ const filter = require('../../assets/filter_icon.png')
 
 function BasicSearch() {
   const navigation = useNavigation()
-  const drawer = useRef(null);
+
+  const [searchText, setSearchText] = useState('');
 
   return (
     <View>
@@ -30,17 +31,19 @@ function BasicSearch() {
           <Image source={imageLogo} style={BasicSearchStyles.img_logo} />
         </View>
         <View style={BasicSearchStyles.search}>
-          <TextboxSearch style={BasicSearchStyles.TextboxSearch} />
+          <TextboxSearch style={BasicSearchStyles.TextboxSearch} searchValue={searchText} setSearchValue={setSearchText} />
           <Image source={filter} style={BasicSearchStyles.filtericon} />
         </View>
       </View>
 
       <View >
         <View style={BasicSearchStyles.bookContainer}>
-          <View style={BasicSearchStyles.books}>
+
+          <ScrollView style={{ height: '100%' }}>
             <BookComponent />
             <BookComponent />
-          </View>
+          </ScrollView>
+
         </View>
 
         <PageNav />

@@ -7,6 +7,7 @@ import SignUp from './components/Pages/SignUp'
 import BookDetails from './components/Pages/BookDetails'
 import Account from './components/Pages/Account'
 import CustomDrawer from './components/Pages/CustomDrawer'
+import pcClients from './components/Pages/PcClients'
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Stack.Screen name="BasicSearch" component={CustomDrawer} options={{ headerShown: false }} />
         <Stack.Screen name="Account" component={Account} options={{ headerShown: false }} />
         <Stack.Screen name="BookDetails" component={BookDetails} options={{ headerShown: false }} />
+        <Stack.Screen name="PcClients" component={pcClients} options={{ headerShown: false }} />
 
       </Stack.Navigator>
     </NavigationContainer>

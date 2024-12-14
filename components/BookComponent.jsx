@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 
@@ -6,7 +6,7 @@ const bookMark = require('../assets/bookmark.png')
 
 const imagePlaceholder = require('../assets/image_placeholder.png')
 
-function BookComponent({ bookTitle, bookCallNum, style }) {
+function BookComponent({ bookTitle, bookCallNum, DaysNum, DaysText }) {
 
   const navigation = useNavigation()
 
@@ -18,20 +18,31 @@ function BookComponent({ bookTitle, bookCallNum, style }) {
   if (bookCallNum == null) {
     bookCallNum = "Empty Call Number"
   }
+
+  const bookMarked = () => {
+    console.log("bookmark")
+  }
   return (
-    <Pressable onPress={() => navigation.navigate("BookDetails")}>
-      <View style={[bookstyles.Bookcontainer, style]}>
+
+    <View style={bookstyles.Bookcontainer}>
+      <Pressable onPress={() => navigation.navigate("BookDetails")}>
         {/* <View style={bookstyles.book}></View> */}
         <Image source={imagePlaceholder} style={bookstyles.book} />
 
-        <Image source={bookMark} style={bookstyles.bookmark} />
-
-        <View>
+        <View style={bookstyles.bookInfo}>
           <Text style={bookstyles.bookTitle}>{bookTitle}</Text>
           <Text style={bookstyles.bookCallNum}>{bookCallNum}</Text>
+          {<Text style={bookstyles.bookDays}>{DaysText}</Text>}
+          {<Text style={bookstyles.bookDaysNum}>{DaysNum}</Text>}
+
         </View>
-      </View>
-    </Pressable>
+      </Pressable>
+      <TouchableOpacity onPress={bookMarked} style={bookstyles.bookmark}>
+        <Image source={bookMark} />
+      </TouchableOpacity>
+    </View>
+
+
 
   )
 }
@@ -43,19 +54,19 @@ const bookstyles = StyleSheet.create({
     position: 'relative',
     display: "flex",
     flexDirection: "row",
-    height: 100,
+    height: 90,
     width: 380,
     margin: 'auto',
-    top: 40,
+    top: 30,
     backgroundColor: '#FFFFFF',
-    borderRadius: 15,
+    // borderRadius: 15,
     borderWidth: 1,
     borderColor: '#FFF',
     marginBottom: 15,
+    resizeMode: 'contain',
   },
 
   book: {
-    padding: 23,
     margin: 10,
     width: 60,
     height: 60,
@@ -72,9 +83,11 @@ const bookstyles = StyleSheet.create({
   },
 
   bookmark: {
-    position: 'absolute',
-    right: 10,
-    top: 20,
+    left: '6%',
+    top: '25%',
+    resizeMode: 'contain',
+    height: 40,
+    width: 40,
   },
 
   bookCallNum: {
@@ -85,5 +98,31 @@ const bookstyles = StyleSheet.create({
     textAlign: 'center',
   },
 
+  bookDays: {
+    fontSize: 14,
+    color: '#787878',
+    bottom: 18,
+    left: 130,
+    textAlign: 'center',
+    color: 'black',
+  },
 
+  bookDaysNum: {
+    fontSize: 11,
+    color: '#787878',
+    bottom: 18,
+    left: 150,
+    textAlign: 'center',
+    fontSize: 11,
+  },
+
+  bookInfo: {
+    position: 'relative',
+    display: "flex",
+    flexDirection: "column",
+    height: 90,
+    width: 300,
+    top: '-90%',
+    left: '-10%',
+  },
 })
