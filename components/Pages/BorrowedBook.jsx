@@ -1,7 +1,57 @@
-import { StyleSheet } from "react-native"
+import { View, Text, Image, TouchableOpacity, DrawerLayoutAndroid, Pressable, StyleSheet } from 'react-native'
+import React, { useRef, useState } from 'react'
+import { TextboxSearch } from '../TextBox'
+import BookComponent from '../BookComponent'
+import PageNav from '../PageNav'
+import { useNavigation } from '@react-navigation/native'
 
 
-export default BasicSearchStyles = StyleSheet.create({
+
+const imageLogo = require('../../assets/Bibliotech_logo.png')
+const threeBar = require('../../assets/three_bar.png')
+const filter = require('../../assets/filter_icon.png')
+
+export function BorrowedBook() {
+    const navigation = useNavigation()
+
+    return (
+        <View>
+
+
+            <View>
+                <View style={styles.header}>
+                    <Pressable onPress={() => {
+                        navigation.toggleDrawer()
+                    }}>
+                        <Image source={threeBar} style={styles.threeBar} />
+                    </Pressable>
+                    <Image source={imageLogo} style={styles.img_logo} />
+                </View>
+
+            </View>
+
+            <View >
+                <View style={styles.bookContainer}>
+                    <View style={styles.books}>
+                        <BookComponent DaysText={"Days Left"} DaysNum={"3"} />
+                    </View>
+                </View>
+
+                <PageNav />
+
+            </View>
+        </View>
+
+    )
+}
+
+
+
+
+
+export default BorrowedBook
+
+const styles = StyleSheet.create({
     header: {
         display: 'flex',
         flexDirection: 'row',
@@ -61,9 +111,11 @@ export default BasicSearchStyles = StyleSheet.create({
         height: 548,
         backgroundColor: '#E8E8E8',
         top: 10,
-
     },
 
+    books: {
+        bottom: 5,
+    },
 
     threeBarDrawer: {
         height: 25,
@@ -94,4 +146,6 @@ export default BasicSearchStyles = StyleSheet.create({
     drawerContainer: {
         borderTopRightRadius: 10,
     }
-})
+}
+)
+

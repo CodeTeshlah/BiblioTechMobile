@@ -47,12 +47,12 @@ const styles = StyleSheet.create({
   //Search Bar
 
   textboxSearchbar: {
-    // height: 40,
-    // width: '100%',
-    // padding: 10,
-    // marginLeft: 25,
-    // borderRadius: 35,
-    // color: '#7D3EEC',
+    height: 40,
+    width: '70%',
+    padding: 10,
+    marginLeft: 25,
+    borderRadius: 35,
+    color: '#7D3EEC',
   },
 
   searchicon: {
